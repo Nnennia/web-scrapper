@@ -74,10 +74,11 @@ if __name__ == "__main__":
 
     if page_content:
         data = extract_html_content(page_content)
+        data['paragraphs'] = [paragraph.replace('\n', '').replace('\t','') for paragraph in data['paragraphs']]
 
         # Save data in a JSON file
         output_filename = "scraped_data.json"
         with open(output_filename, "w") as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=2)
 
         print("Data has been scraped and saved to 'scraped_data.json'")
