@@ -1,0 +1,5 @@
+In the get_page_content function, we use the urllib.request.urlopen function to send an HTTP GET request to the specified URL and fetch the page content. We decode the response using UTF-8 encoding and return the content as a string.
+
+The extract_html_contents function manually extracts the title and paragraphs from the HTML content. It uses string manipulations to find the start and end positions of the title and paragraphs, and then extracts the corresponding text. The extracted data is returned as a dictionary with keys "title" and "paragraphs".
+
+In the main part of the code, we prompt the user to enter a URL and call the get_page_content function to fetch the page content. If the content is successfully fetched, we call the extract_title_and_paragraphs function to extract the desired data. The scraped data is then saved to a JSON file using the json.dump function.
